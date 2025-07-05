@@ -11,64 +11,69 @@
   
 </head>
 <body>
-  <header class="hero">
-    <h1>Luc van der Gun</h1>
-    <div class="buttons">
-      <a href="#about"><i class="fa-solid fa-circle-user"></i> About</a>
-	  <span class="divider">|</span>
-      <a href="#portfolio"><i class="fa-solid fa-magnifying-glass"></i> Portfolio</a>
-	  <span class="divider">|</span>
-	  <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-    </div>
-	<hr />
-  </header>
-
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      
-	  <h3>Profile</h3>
-	  <p>Based in XYZ. Passionate about design and development...</p>
-
-	  <h3>Education</h3>
-	  <ul>
-		<li>BSc in Computer Science, University of X (2018–2021)</li>
-	  </ul>
-
-	  <h3>Experience</h3>
-	  <ul>
-		<li>Frontend Developer at XYZ (2022–Present)</li>
-	  </ul>
-
-	  <h3>Skills</h3>
-	  <ul>
-		<li>HTML, CSS, JavaScript, Figma, Git</li>
-	  </ul>
-    </section>
-
-    <section id="portfolio">
-      <h2>Selected Work</h2>
-      
-	  <h3>Publications</h3>
-	  <ul>
-		<li>"AI: Panacea or Non-Intentional Dehumanisation" – Journal of Human-Technology Relations (2024)</li>
-	  </ul>
-
-	  <h3>Code Projects</h3> 
-	  <ul>
-		<li><strong>MyApp</strong>: A task management web app built with React</li>
-	  </ul>
-	  
-    </section>
+	<header class="hero">
+		<h1>Luc van der Gun</h1>
+	</header>
 	
-	<section id="contact">
-      <h2>Let's Connect</h2>
-      <p>Contact form?</p>
-    </section>
-  </main>
+	<nav class="menu-bar">
+		<div class="buttons">
+			<a href="#about"><i class="fa-solid fa-circle-user"></i> About</a>
+			<span class="divider">|</span>
+			<a href="#portfolio"><i class="fa-solid fa-magnifying-glass"></i> Portfolio</a>
+			<span class="divider">|</span>
+			<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+		</div>
+		<!-- <hr class="menu-underline" /> -->
+	</nav>
+	
+	<div class="parallax"></div>
+	
+	<main>
+		<section id="about">
+			<h2>About Me</h2>
 
-  <footer>
-    <p>&copy; 2025 Luc van der Gun</p>
-  </footer>
+			<!-- Profile, Education, Experience, Skills -->
+			<p>Hi! I'm Luc and passionate about...</p>
+		</section>
+		
+		<div class="parallax"></div>
+
+		<section id="portfolio">
+			<h2>Selected Work</h2>
+
+			<h3>Code Projects</h3> 
+			<p><strong>Retro Racers</strong>: An ode to the well-loved original Lego Racers made by High Voltage Software. Made in the Unity framework, where I am responsible for coding (setting up architecture, implementing functionalities) and making all components of the game work together.</p>
+			
+			<p><a href="https://cabin-fever.itch.io/cavernsofazzandra"><strong>Caverns of Azzandra</strong></a>: A "roguelike" game made entirely from scratch using the Monogame framework for C#.</p>
+			
+
+			<h3>Publications</h3>
+			"AI: Panacea or Non-Intentional Dehumanisation" – Journal of Human-Technology Relations (2024)
+		</section>
+		
+		<div class="parallax"></div>
+
+		<section id="contact">
+			<h2>Let's Connect</h2>
+			<p>Connection lost. Please wait - attempting to reestablish...</p>
+		</section>
+	</main>
+
+	<footer>
+	<p>&copy; 2025 Luc van der Gun</p>
+	</footer>
+	
+	<script>
+		window.addEventListener('scroll', function () {
+			const menuBar = document.querySelector('.menu-bar');
+			const stickyPoint = menuBar.offsetTop;
+
+			if (window.scrollY >= stickyPoint) {
+				menuBar.classList.add('is-sticky');
+			} else {
+				menuBar.classList.remove('is-sticky');
+			}
+		});
+	</script>
 </body>
 </html>

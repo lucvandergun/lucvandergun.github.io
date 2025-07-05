@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	font-family: 'Inconsolata', monospace;
+	font-family: 'Nunito', serif;
 	background-color: #f7fcf9;
 	color: #2e4f4f;
 	line-height: 1.8;
@@ -25,7 +25,7 @@ body {
 
 .hero h1 {
 	font-family: 'Playfair Display', serif;
-	font-size: 4rem;
+	font-size: 6rem;
 	margin-bottom: 1.5rem;
 	color: #2e4f4f;
 }
@@ -33,6 +33,7 @@ body {
 /* Buttons as clean links */
 .buttons {
 	font-size: 1rem;
+	font-family: 'Inconsolata', monospace;
 }
 
 .buttons a {
@@ -58,13 +59,37 @@ body {
 	margin: 0 0.5rem;
 }
 
-/* Horizontal line below buttons */
-.hero hr {
-	margin-top: 2rem;
-	margin-left: 100px;
-	margin-right: 100px;
-	border: none;
-	border-top: 2px solid #cfe3d9;
+
+/* Sticky menu bar */
+.menu-bar {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: #f7fcf9;
+	text-align: center;
+	padding: 1rem 0;
+	transition: all 0.3s ease;
+}
+
+.menu-bar::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 100%;
+	background-color: #cfe3d9;
+	transform: scaleX(0.8);
+	transform-origin: center;
+	transition: transform 0.3s ease;
+}
+
+.menu-bar.is-sticky {
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.menu-bar.is-sticky::after {
+	transform: scaleX(1);
 }
 
 /* Sections */
@@ -72,10 +97,11 @@ section {
 	padding: 4rem 2rem;
 	max-width: 800px;
 	margin: auto;
+	scroll-margin-top: 50px;
 }
 
 section h2 {
-	font-family: 'Nunito', serif;
+	font-family: 'Inconsolata', monospace;
 	font-size: 2rem;
 	color: #2e4f4f;
 	margin-bottom: 1rem;
@@ -87,6 +113,16 @@ section h3 {
 	color: #3a5a40; /* slightly darker green accent */
 	border-bottom: 1px solid #cfe3d9;
 	padding-bottom: 0.3rem;
+}
+
+/* Parallax */
+.parallax {
+  background-image: url('slov.jpg'); /* Replace with your image path */
+  min-height: 000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Footer */
