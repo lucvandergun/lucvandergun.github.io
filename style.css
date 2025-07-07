@@ -8,14 +8,15 @@
 :root {
 --color-bg: #e0f0f3;
 --color-text: #013249;
---color-hero-header: #27515E;
---color-header: #3b7687;
---color-subheader: #509db3;
+--color-header1: #27515E;
+--color-header2: #3b7687;
+--color-header3: #46899C;
+--color-header4: #509db3;
 --color-menu: #3b7687;
 --color-link: #0a9fdf;
 --color-hover: #70c4fe;
 --color-divider: #B6D1D6;
---color-footer: #27515e;
+--color-footer: #3b7687;
 
 --font-main: 'Inconsolata', monospace;
 --font-heading: 'Playfair display', serif;
@@ -55,13 +56,8 @@ p {
 h1, h2, h3, h4 {
 	scroll-margin-top: 85px;
 	font-family: var(--font-heading);
-	color: var(--color-header);
 	margin-top: 0;
 	margin-bottom: 0;
-}
-
-h3, h4 {
-	color: var(--color-subheader);
 }
 
 p {
@@ -87,10 +83,9 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 }
 
 .hero h1 {
-	margin: 0 auto 1.5 rem;
+	margin: 0 auto 1.5rem;
 	font-size: clamp(3rem, 8vw, 5rem);
-	color: var(--color-hero-header);
-	white-space: nowrap;
+	color: var(--color-header1);
 }
 
 
@@ -209,7 +204,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 	background-color: var(--color-bg);
 	text-align: center;
 	padding: 0.5rem 0;
-	transition: all 0.3s ease;
+	transition: all 0.5s ease;
 }
 
 .menu-bar::after {
@@ -227,6 +222,15 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 
 .menu-bar.is-sticky {
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+	background-color: var(--color-menu);
+}
+
+.menu-bar.is-sticky .buttons a {
+	color: var(--color-bg);
+}
+
+.menu-bar.is-sticky .hamburger span {
+	background-color: var(--color-bg);
 }
 
 .menu-bar.is-sticky::after {
@@ -249,15 +253,18 @@ section {
 section h2 {
 	font-size: 3rem;
 	margin-bottom: 0.5em;
+	color: var(--color-header2);
 }
 section h3 {
 	font-size: 2rem;
 	margin-top: 1em;
 	margin-bottom: 0.5em;
+	color: var(--color-header3);
 }
 section h4 {
 	font-size: 1.6rem;
 	margin-top: 1em;
+	color: var(--color-header4);
 }
 
 
