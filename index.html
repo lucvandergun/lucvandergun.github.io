@@ -10,16 +10,22 @@
   <link	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Inconsolata&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@550&family=Merriweather:wght@750&display=swap" rel="stylesheet">
   
 </head>
 <body>
 	<header class="hero">
-		<h1><a href="">Luc van der Gun</a></h1>
+		<h1><a href="">LUC VAN DER GUN</a></h1>
 	</header>
 	
 	<div id="sticky-trigger"></div>
 	
 	<nav class="menu-bar">
+		<button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu-buttons">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
 		<div class="buttons">
 			<a href="#top"><i class="fa-solid fa-house"></i><span>Home</span></a>
 			<span class="divider">|</span>
@@ -41,27 +47,24 @@
 		</section>
 		
 		<section id="about" class="content-grid">
-			<div class="column"></div>
-			<div class="column"><h2>About Me</h2></div>
-			
 			<div class="column">
-			<p>me.jpg</p>
-			<!--- <img src="slov.jpg" alt="Example image" width="500"/> -->
+			<img src="profile.png" class="bottom-right-image" width="300"/>
 			</div>
 			
 			<div class="column">
-			<p>
-				Hi! I'm Luc and I'm passionate about
-				lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+				<p>
+					<h2>About Me</h2>
+					Hi! I'm Luc and I'm passionate about
+					lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
 			</div>
 
 			<div class="full-span-column">
-			<p>Here, I will put my short biography.
-			Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-			</p>
+				<p>Here, I will put my short biography.
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+				</p>
 			
-			<p><a href="Curriculum_Vitae_Luc_van_der_Gun.pdf" download>Download CV</a></p>
+				<p><a href="Curriculum_Vitae_Luc_van_der_Gun.pdf" download>Download CV</a></p>
 			</div>
 		</section>
 		
@@ -187,6 +190,16 @@
 		window.addEventListener('scroll', handleStickyMenu);
 		window.addEventListener('resize', handleStickyMenu);
 		window.addEventListener('load', handleStickyMenu);
+		
+		// Hamburger menu handler
+		const hamburger = document.querySelector('.hamburger');
+		const menuButtons = document.querySelector('.buttons');
+
+		hamburger.addEventListener('click', () => {
+			const isOpen = menuButtons.classList.toggle('open');
+			hamburger.classList.toggle('active');
+			hamburger.setAttribute('aria-expanded', isOpen);
+		});
 		
 		// Anchor link id assigner for headers
 		document.querySelectorAll('h1, h2, h3, h4').forEach(heading => {
