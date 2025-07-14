@@ -386,3 +386,25 @@ a:hover {
 .bar-thin {
 	height: 1px;
 }
+
+.icon-container {
+	display: flex;
+	gap: 20px;
+	font-size: 2rem;
+}
+
+.icon-container a {
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+/* Link colors & lighter hovers*/
+.linkedin { color: #0077B5; }
+.github   { color: #333; }
+.orcid    { color: #A6CE39; }
+.email    { color: #D44638; }
+
+.linkedin:hover { color: #66b2e3; }
+.github:hover   { color: #999; }
+.orcid:hover    { color: #cce685; }
+.email:hover    { color: #ff7f66; }
