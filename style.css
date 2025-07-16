@@ -19,7 +19,8 @@
 --color-link: #7FB8A4;
 --color-link-hover: #D38CE2;
 
---font-main: 'Inconsolata', monospace;
+--font-main: 'Nunito', sans-serif;
+--font-menu: 'Inconsolata', monospace;
 --font-heading: 'Playfair display', serif;
 }
 
@@ -102,6 +103,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 	max-height: 5rem;
 	font-size: 1.2rem;
 	transition: max-height 0.5s ease;
+	font-family: var(--font-menu);
 }
 
 .buttons a {
@@ -323,6 +325,13 @@ a:hover {
 	position: relative;
 }
 
+.column img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+}
+
 .full-span-column {
 	grid-column: 1 / -1;
 	/*border: 1px solid blue;*/
@@ -387,24 +396,58 @@ a:hover {
 	height: 1px;
 }
 
-.icon-container {
+.icon-container-vertical {
 	display: flex;
-	gap: 20px;
-	font-size: 2rem;
+	flex-direction: column;
+	gap: 16px;
+	align-items: flex-start;
 }
 
-.icon-container a {
+.contact-button {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	font-size: 1rem;
+	font-weight: 500;
 	text-decoration: none;
+	transition: color 0.3s;
+	font-family: var(--font-menu);
+}
+
+.contact-button i {
+	font-size: 1.8rem;
 	transition: color 0.3s;
 }
 
-/* Link colors & lighter hovers*/
+.contact-button:hover i {
+	text-decoration: none;
+}
+
+.contact-button span {
+	transition: text-decoration 0.3s;
+}
+
+.contact-button:hover span {
+	text-decoration: underline;
+}
+
 .linkedin { color: #0077B5; }
 .github   { color: #333; }
 .orcid    { color: #A6CE39; }
 .email    { color: #D44638; }
 
-.linkedin:hover { color: #66b2e3; }
-.github:hover   { color: #999; }
-.orcid:hover    { color: #cce685; }
-.email:hover    { color: #ff7f66; }
+.linkedin:hover {
+	color: #66b2e3;
+}
+
+.github:hover {
+	color: #999;
+}
+
+.orcid:hover {
+	color: #cce685;
+}
+
+.email:hover {
+	color: #ff7f66;
+}
