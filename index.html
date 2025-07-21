@@ -96,7 +96,7 @@
 					
 					Outside of academia, I've actively pursued my passion for technology through numerous coding projects, with a strong emphasis on game development.
 					
-					Most of my development work has been in C#, though I'm also proficient in Java and Python, and have experience with HTML/CSS, Scala, and several other languages.
+					Most of my development work has been in C#, Python and Java, though I also have experience with HTML/CSS, JavaScript, Scala, SQL and several other languages.
 					
 					You can explore some of the highlights of my technical projects in the portfolio section.
 				</p>
@@ -130,7 +130,9 @@
 			</div>
 			
 			<div class="column"></div>
-			<div class="column"><h4>Retro Racers</h4></div>
+			<div class="column">
+				<h4>Retro Racers</h4>
+			</div>
 				
 			<div class="column">
 				<img src="retro_racers.png" class="center-image"/>
@@ -155,7 +157,14 @@
 				</p>
 			</div>
 			
-			<div class="column"><h4>Caverns of Azzandra</h4></div>
+			<div class="column">
+				<div class="project-line">
+					<h4>Caverns of Azzandra</h4>
+					<span class="project-links">
+						(<a href="https://github.com/lucvandergun/Azzandra" target="_blank">github.io</a> | <a href="https://cabin-fever.itch.io/cavernsofazzandra" target="_blank">itch.io</a>)
+					</span>
+				</div>
+			</div>
 			<div class="column"></div>
 			
 			<div class="column">
@@ -251,10 +260,13 @@
 		const trigger = document.getElementById('sticky-trigger');
 
 		function handleStickyMenu() {
+			if (!trigger || !menuBar) return;
+			
 			const triggerTop = trigger.getBoundingClientRect().top;
 
 			if (triggerTop <= 0) {
-				if (!menuBar.classList.contains('is-sticky')) {
+				if (!menuBar.classList.contains('is-sticky'))
+				{
 					menuBar.classList.add('is-sticky');
 				}
 			} else {
@@ -280,16 +292,16 @@
 		
 		// Anchor link id assigner for headers
 		document.querySelectorAll('h1, h2, h3, h4').forEach(heading => {
-		if (!heading.id) {
-		  heading.id = heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
-		}
+			if (!heading.id) {
+				heading.id = heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+			}
 
-		const link = document.createElement('a');
-		link.href = `#${heading.id}`;
-		link.innerHTML = heading.innerHTML;
-		heading.innerHTML = '';
-		heading.appendChild(link);
-	  });
+			const link = document.createElement('a');
+			link.href = `#${heading.id}`;
+			link.innerHTML = heading.innerHTML;
+			heading.innerHTML = '';
+			heading.appendChild(link);
+		});
 	</script>
 </body>
 </html>

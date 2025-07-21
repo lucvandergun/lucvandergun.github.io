@@ -396,6 +396,16 @@ a:hover {
 	height: 1px;
 }
 
+/* Project title with link */
+
+.project-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Contact links */
+
 .icon-container-vertical {
 	display: flex;
 	flex-direction: column;
