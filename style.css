@@ -399,9 +399,21 @@ a:hover {
 /* Project title with link */
 
 .project-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	position: relative;
+}
+
+.project-line h4 {
+	flex: 1 1 auto;
+	text-align: left;
+	white-space: normal;
+}
+
+.project-links {
+	flex: 0 1 auto;
+	margin-left: auto;
 }
 
 /* Contact links */
